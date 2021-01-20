@@ -34,14 +34,18 @@ What are the main features of Youtube's database implementation? How it is diffe
 ## Problem 3
 How is Facebook database implementation different than native MySQL implementation? Is FB's implementation available for public use?
 
+**Solution**
+3.1. It uses RockDB along with MySQL. 
+3.2. It is available for public use as their codes are opensource [8].
+
 ## Problem 4
 What are the ACID properties? Do all databases need to comply with the ACID properties? Can you think of some examples of databases that do not follow ACID properties? 
 
 **Solution**
 
-1.1 Atomicity, Consistency, Isolation and Durability.
-1.2
-1.3
+1.1 Atomicity, Consistency, Isolation and Durability.   
+1.2 No, not necessary. ACID comes with a trade off of performance. Places where performance is more important than data loss, Databases without ACID can be used.   
+1.3 NoSQL Databases partialy or completely does not adhere to ACID properties. Data's such as photos, messages, videos, etc are fine even the database is not ACID compliant. ACID properties are required when the data handled is more sensitive and cannot afford any losses like the database used in financial transactions, health care units, etc[10].
 
 ## References or Resources 📖
 
@@ -53,3 +57,6 @@ SYSTEM CONCEPTS 6th Edition)
 5. https://www.geeksforgeeks.org/use-of-nosql-in-industry/
 6. https://www.geeksforgeeks.org/how-does-youtube-store-and-analyze-such-huge-amount-of-data/
 7. https://www.youtube.com/watch?v=5yDO-tmIoXY
+8. https://engineering.fb.com/2016/08/31/core-data/myrocks-a-space-and-write-optimized-mysql-database/
+9. https://www.percona.com/blog/2014/03/27/a-conversation-with-5-facebook-mysql-gurus/
+10. https://www.quora.com/Why-are-ACID-properties-not-followed-in-Big-Data
