@@ -28,15 +28,16 @@ What are the main features of Youtube's database implementation? How it is diffe
 **Solution**
 2.1 Youtube uses MySQL type of database. It stores video content and other meta datas like users,tags,descriptions, likes,comments,subsriptions,etc. 
 
-2.2. Vitess is used in conjugation with MySQL. Vitess is a database clustering system that combines many of the important features of MySQL with the scalability that is a trademark of a NoSQL database. Vitess helps in consolidating the YouTube queries into smaller batches that are much easier to handle and execute. It also creates backups and scales as much is required [6]. Vitess solves the problems like large number of connections to MySQL database, protecting from bad queries, etc[7].By using vitess it gets features of both SQL and NonSQL database. Features of SQL database in Vitess include Transactions,Indexes,Joins,Schema and from NonSQL it has Sharding. It required both the properties, therefore youtube settled for the sweetspot by using Vitess.
+2.2. Vitess is used in conjugation with MySQL. Vitess is a database clustering system that combines many of the important features of MySQL with the scalability that is a trademark of a NoSQL database. Vitess helps in consolidating the YouTube queries into smaller batches that are much easier to handle and execute. It also creates backups and scales as much is required [6]. Vitess solves the problems like large number of connections to MySQL database, protecting from bad queries, etc[7].By using vitess it gets features of both SQL and NonSQL database. Features of SQL database in Vitess include Transactions,Indexes,Joins,Schema and from NonSQL it has Sharding. 
 
 
 ## Problem 3
 How is Facebook database implementation different than native MySQL implementation? Is FB's implementation available for public use?
 
 **Solution**
-3.1. It uses RockDB along with MySQL. 
-3.2. It is available for public use as their codes are opensource [8].
+
+3.1 It uses MySQL with a caching system called memcache. Initially, InnoDB database engine was used and they developed myRocksDB database engine laterwards[12].    
+3.2. myRocks DB is available for public use as it is part of an open source project by Facebook. [11].
 
 ## Problem 4
 What are the ACID properties? Do all databases need to comply with the ACID properties? Can you think of some examples of databases that do not follow ACID properties? 
@@ -44,8 +45,8 @@ What are the ACID properties? Do all databases need to comply with the ACID prop
 **Solution**
 
 1.1 Atomicity, Consistency, Isolation and Durability.   
-1.2 No, not necessary. ACID comes with a trade off of performance. Places where performance is more important than data loss, Databases without ACID can be used.   
-1.3 NoSQL Databases partialy or completely does not adhere to ACID properties. Data's such as photos, messages, videos, etc are fine even the database is not ACID compliant. ACID properties are required when the data handled is more sensitive and cannot afford any losses like the database used in financial transactions, health care units, etc[10].
+1.2 No, not necessarily. ACID comes with a trade off of performance. Places where performance is more important than data loss, Databases without ACID can be used.   
+1.3 NoSQL Databases partialy or completely does not adhere to ACID properties. Data's such as photos, messages, videos, etc are fine even the database is not ACID compliant. ACID properties are required when the data handled is more sensitive and cannot afford any losses like the database used in financial transactions, health care units, etc[10`].
 
 ## References or Resources 📖
 
@@ -60,3 +61,5 @@ SYSTEM CONCEPTS 6th Edition)
 8. https://engineering.fb.com/2016/08/31/core-data/myrocks-a-space-and-write-optimized-mysql-database/
 9. https://www.percona.com/blog/2014/03/27/a-conversation-with-5-facebook-mysql-gurus/
 10. https://www.quora.com/Why-are-ACID-properties-not-followed-in-Big-Data
+11. http://myrocks.io/
+12. https://www.8bitmen.com/what-database-does-facebook-use-a-1000-feet-deep-dive/
