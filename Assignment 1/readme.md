@@ -1,6 +1,6 @@
-# Assignment 1 <!-- omit in toc -->
+# Assignment 1 <!-- omit in toc --> 📗
 
-## Contents <!-- omit in toc -->
+## Contents <!-- omit in toc --> :newspaper:
 - [Problem 1](#problem-1)
 - [Problem 2](#problem-2)
 - [Problem 3](#problem-3)
