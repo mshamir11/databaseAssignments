@@ -1,0 +1,17 @@
+delimiter $$
+create procedure findOrder()
+begin 
+    declare ordertemp int;
+    declare v_finished integer default 0;
+    declare orderCursor cursor for select order_number from Orders where user_ID=1;
+    declare continue handler for NOT FOUND set v_finished=1;
+    open orderCursor;
+    get_order: LOOP
+        fetch orderCursor into ordertemp;
+        if v_finished=1 then
+            leave get_order;
+        end if;
+        update Orders set user_ID=1032 where order_number=ordertemp;
+    END LOOP get_order;
+    close orderCursor;
+end $$

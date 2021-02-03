@@ -1,0 +1,11 @@
+use ecommerce;
+INSERT INTO Novels VALUES(35,'The Davinci Code','Dan Brown',STR_TO_DATE('06-07-2010', '%d-%m-%Y'),'The Davinci Code by Dan Brown is a good one to read');
+INSERT INTO Novels VALUES(36,'Angels and Demons','Dan Brown',STR_TO_DATE('14-05-2009', '%d-%m-%Y'),'Angels and Demons by Dan Brown is a good one to read');
+INSERT INTO Novels VALUES(37,'Deception Point','Dan Brown',STR_TO_DATE('14-05-2009', '%d-%m-%Y'),'Deception Point by Dan Brown is a good one to read');
+INSERT INTO Novels VALUES(38,'The Lost Symbol','Dan Brown',STR_TO_DATE('15-09-2009', '%d-%m-%Y'),'The Lost Symbol by Dan Brown is a good one to read');
+INSERT INTO Novels VALUES(39,'Sacred Games','Vikram Chandra',STR_TO_DATE('03-03-2011', '%d-%m-%Y'),'Sacred Games by Vikram Chandra is a good one to read');
+INSERT INTO Novels VALUES(40,'Harry Potter and the Philosphers stone','JK Rowling',STR_TO_DATE('01-09-2014', '%d-%m-%Y'),'Harry Potter and the Philosphers stone by JK Rowling is a good one to read');
+INSERT INTO Novels VALUES(41,'Harry Potter and the Chamber of Secrets','JK Rowling',STR_TO_DATE('03-09-2014', '%d-%m-%Y'),'Harry Potter and the Chamber of Secrets by JK Rowling is a good one to read');
+INSERT INTO Novels VALUES(42,'The Fountainhead','Ayn Rand',STR_TO_DATE('01-09-1996', '%d-%m-%Y'),'The Fountainhead by Ayn Rand is a good one to read');
+INSERT INTO Novels VALUES(43,'One Indian Girl','Chetan Bhagat',STR_TO_DATE('01-10-2016', '%d-%m-%Y'),'One Indian Girl by Chetan Bhagat is a good one to read');
+INSERT INTO Novels VALUES(44,'The Adventure of Sherlock Holmes','Sir Arthur Conan Doyle',STR_TO_DATE('01-09-2016', '%d-%m-%Y'),'The Adventure of Sherlock Holmes by Sir Arthur Conan Doyle is a good one to read');

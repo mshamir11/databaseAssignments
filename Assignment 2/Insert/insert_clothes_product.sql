@@ -1,0 +1,11 @@
+use ecommerce;
+INSERT INTO Products VALUES(45,'Arrow: Mens Regular fit solid shirt',1,STR_TO_DATE('01-10-2020', '%d-%m-%Y'),NULL,4199.0,45,1);
+INSERT INTO Products VALUES(46,'Louis Philippe: Mens Regular fit formal shirt',1,STR_TO_DATE('04-11-2020', '%d-%m-%Y'),NULL,4269.0,46,2);
+INSERT INTO Products VALUES(47,'Tommy Hilfiger: Mens Regular fit formal shirt',1,STR_TO_DATE('10-11-2020', '%d-%m-%Y'),NULL,4499.0,47,3);
+INSERT INTO Products VALUES(48,'Mens Bomber Jacket',1,STR_TO_DATE('10-12-2020', '%d-%m-%Y'),NULL,1011.0,48,4);
+INSERT INTO Products VALUES(49,'Mens Cotton Turtle Neck Sweater',1,STR_TO_DATE('11-09-2018', '%d-%m-%Y'),NULL,782.0,49,5);
+INSERT INTO Products VALUES(50,'Round Neck Sweater',1,STR_TO_DATE('12-07-2018', '%d-%m-%Y'),NULL,639.0,45,1);
+INSERT INTO Products VALUES(51,'Blended Sweater',1,STR_TO_DATE('13-05-2017', '%d-%m-%Y'),NULL,899.0,46,2);
+INSERT INTO Products VALUES(52,'Relaxed Jeans',1,STR_TO_DATE('20-07-2019', '%d-%m-%Y'),NULL,628.0,47,3);
+INSERT INTO Products VALUES(53,'Slim Fit Denim Jeans',1,STR_TO_DATE('12-12-2020', '%d-%m-%Y'),NULL,529.0,48,4);
+INSERT INTO Products VALUES(54,'Cut and Sew Denim Jeans',1,STR_TO_DATE('13-12-2020', '%d-%m-%Y'),NULL,856.0,49,5);
