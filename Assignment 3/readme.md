@@ -34,6 +34,40 @@ The Schema for the following problems is as shown below. The integrity constrain
 - Python Script can be accessed using this [Link](data_insert.ipynb)
 - All the sql insertion codes are avalible in the [insert directory.](./insert)
 
+```bash
+
+├── create_table.sql
+├── data_insert.ipynb
+├── dataset
+│   ├── ball_by_ball.csv
+│   ├── batsman_scored.csv
+│   ├── extra_runs.csv
+│   ├── match.csv
+│   ├── player.csv
+│   ├── player_match.csv
+│   ├── team.csv
+│   └── wicket_taken.csv
+├── images
+│   └── schema.png
+├── insert
+│   ├── ball_by_ball.sql
+│   ├── batsman_scored.sql
+│   ├── extra_runs.sql
+│   ├── match.sql
+│   ├── player_match.sql
+│   ├── player.sql
+│   ├── team.sql
+│   └── wicket_taken.sql
+├── readme.md
+└── run_all.sh
+
+```
+- To create the database and insert all the data. Run run_all.sh
+
+```bash
+  source run_all.sh
+```
+
 ### Problem 1
 Write SQL queries for the following questions. Questions ‘a’ to ‘g’ carry 2 marks each. Questions ‘h’-’j’ carry 1 mark each. (17 marks+5 marks) 
 
