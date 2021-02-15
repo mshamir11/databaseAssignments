@@ -2,13 +2,16 @@
 ---
 
 
-<span style="color:red">Note: Please visit the github repository for codes. [Link]()</span>.
+<span style="color:red">Note: Please visit the github repository for codes. [Link](https://github.com/mshamir11/databaseAssignments/tree/master/Assignment%203)</span>.
 
 ## Contents <!-- omit in toc -->
 
 - [Database Schema](#database-schema)
   - [Creating the database](#creating-the-database)
   - [Get output in CSV](#get-output-in-csv)
+  - [All the SQL](#all-the-sql)
+  - [Results in CSV](#results-in-csv)
+  - [Database Dump](#database-dump)
 - [Problem 1](#problem-1)
 - [Problem 2](#problem-2)
 - [Problem 3](#problem-3)
@@ -28,6 +31,7 @@ The Schema for the following problems is as shown below. The integrity constrain
 - Python Scripts are used to generate sql insertion codes.
 - Python Script can be accessed using this [Link](data_insert.ipynb)
 - All the sql insertion codes are avalible in the [insert directory.](./insert)
+- SQL Code to insert database tables. [Link](create_table.sql)
 
 ```bash
 
@@ -71,6 +75,16 @@ The Schema for the following problems is as shown below. The integrity constrain
 sudo mysql < ./sql_queries/Q1b.sql| sed 's/\t/,/g' > ./results/Q1b.csv
 ```
 
+#### All the SQL
+All the SQL queries can be founded in sql_queries [directory](./sql_queries).
+
+#### Results in CSV
+All the csv results can be found in results [folder](./results).
+
+#### Database Dump
+The database dump can be is in [database_dump.sql](./database_dump.sql).
+
+---
 ### Problem 1
 Write SQL queries for the following questions. Questions ‘a’ to ‘g’ carry 2 marks each. Questions ‘h’-’j’ carry 1 mark each. (17 marks+5 marks) 
 
@@ -125,9 +139,9 @@ player.player_id=last.bowler order by runs_scored;
 - SQL Query file for the same. [Link](./sql_queries/Q1a.sql)
 - Result file. [Link](./results/Q1a.csv)
 
-b. Find the names of all the batsmen(players) and the frequency of their “caught” out in increasing order of the number of “caught”. If a tie occurs, sort names alphabetically. Hint: Frequency can be 0 too.< names >< frequency >
+<hr>
 
-**Dont forget to come back fix the zero issue**
+b. Find the names of all the batsmen(players) and the frequency of their “caught” out in increasing order of the number of “caught”. If a tie occurs, sort names alphabetically. Hint: Frequency can be 0 too.< names >< frequency >
 
 **Solution:**
 ```SQL
@@ -143,6 +157,9 @@ order by Frequency DESC,player_name ASC;
 
 - SQL Query file for the same. [Link](./sql_queries/Q1b.sql)
 - Result file. [Link](./results/Q1b.csv)
+
+
+<hr>
 
 c. List the stadium(s)  where the maximum number of “legbyes” (runs) is taken. If ties occur, show alphabetical order. <venue_name><number_of_legbye_runs>
 
@@ -160,6 +177,7 @@ and extra_runs.extra_type='legbyes' group by match_details.venue ) as K) order b
 - SQL Query file for the same. [Link](./sql_queries/Q1c.sql)
 - Result file. [Link](./results/Q1c.csv)
 
+<hr>
 d. Find the bowler(s)(players) who has the best average(no. of runs given/wickets taken) in edition 5. If a tie occurs, sort names alphabetically. < bowler_name >< average >
 
 **Solution:**
@@ -223,6 +241,7 @@ FINAL.average ASC,player.player_name ASC;
 - SQL Query file for the same. [Link](./sql_queries/Q1d.sql)
 - Result file. [Link](./results/Q1d.csv)
 
+<hr>
 e. Find out the names of all batsmen(players) who scored more than 100 runs in a match and, their runs scored. Sort names alphabetically. (if multiple entries of the same player, show the one with the highest runs).< batsmen_name >< runs >
 
 **Solution:**
@@ -249,6 +268,7 @@ group by C.player_name order by C.player_name ASC;
 - SQL Query file for the same. [Link](./sql_queries/Q1e.sql)
 - Result file. [Link](./results/Q1e.csv)
 
+<hr>
 f. Find out the top 3 batsmen(players) whose [number of runs scored/number of matches played] is the best in edition 2. Sort alphabetically. < batsman_name >< value >
 
 **Solution**
@@ -285,6 +305,7 @@ player.player_id=D.striker;
 - SQL Query file for the same. [Link](./sql_queries/Q1f.sql)
 - Result file. [Link](./results/Q1f.csv)
 
+<hr>
 g. Find out the batting average(as calculated in the above question (f)) of all players. Then only show the list of the top 3 countries with the highest country batting average(∑batting average/Total number of players in that country) < country >< value >
 
 **Solution:**
@@ -348,18 +369,25 @@ group by E.country_name order by value DESC limit 3;
 - SQL Query file for the same. [Link](./sql_queries/Q1g.sql)
 - Result file. [Link](./results/Q1g.csv)
 
+<hr>
+h. Write down a simple query to make a copy of the player table(with data).       
 
-h. Write down a simple query to make a copy of the player table(with data).
+
+**Solution:**
 
 ```SQL
 create table player_new as SELECT * from player;
 ```
 ![Q1h](./images/Q1h.png)
 
+<hr>
+
 i. Using view, create a table say “Indian Players” which contains information about the total runs scored by all the Indian players till now and sort them alphabetically.< name >< runs >
 
 **Solution:**
 
+
+<hr>
 j. List all captains who scored more than 50 runs in edition 3.  Sort names alphabetically < name >< runs >
 
 **Solution:**
@@ -397,6 +425,7 @@ player.player_id = D.striker order by player_name;
 - SQL Query file for the same. [Link](./sql_queries/Q1j.sql)
 - Result file. [Link](./results/Q1j.csv)
 
+<hr>
 
 ### Problem 2
 Suppose a user creates a new relation r1 with a foreign key referencing another relation r2. What authorization privilege does the user need on r2? Why should this not simply be allowed without any such authorization? (max 500 words) (4 marks)
@@ -404,6 +433,8 @@ Suppose a user creates a new relation r1 with a foreign key referencing another 
 **Solution:**
 - References privilege is to be obtained on the the relation r2.
 - It is needed for the smooth functioning when the database is operated by different users. If the user in the given question, creates a foreign key relation referencing r2. Then, if the admin wants to make some changes in the r1, the foreign key would create problems in altering unless some specific constraints are not set by the relation r1 while defining the foreign key. In order to avoid this, difficulty reference previlege is introduced, here the admin would be knowing who all have created foreign key relations and can eleminate them for the easy operations by other users on the same relation r2.
+
+<hr>
 
 ### Problem 3
 Explain the difference between integrity constraints and authorization constraints. (explain them with examples) (max 500 words) (4 marks)
@@ -416,6 +447,8 @@ Explain the difference between integrity constraints and authorization constrain
 - An authorization constraint gives the database administrator the ability to control the authority of various users to do different operations on the databases. Some form of authorization include, permission to read data,permission to insert new data,permission to update data,permission to delete data and many more. Each of these authorizations is called a previlege. 
   - An example can be a database system in IIT Gandhinagar where database admins provide read,write,update,delete permission to the Academic Office and Read access to Students. 
   - It can be controlled using the commands **grant** and **revoke**.
+
+<hr>
 
 ### Problem 4
 Consider a set of users A, B, C, D, and E. Suppose the user A creates a table T and thus is the owner of T. Now suppose the following set of statements is executed in order:
