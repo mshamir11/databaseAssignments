@@ -385,7 +385,26 @@ create table player_new as SELECT * from player;
 i. Using view, create a table say “Indian Players” which contains information about the total runs scored by all the Indian players till now and sort them alphabetically.< name >< runs >
 
 **Solution:**
-
+```SQL
+create view Indian_Players as 
+select player.player_name as name,A.runs
+from
+(select ball_by_ball.striker,
+SUM(batsman_scored.runs_scored) as runs from
+batsman_scored inner join ball_by_ball
+on
+batsman_scored.match_id=ball_by_ball.match_id
+and batsman_scored.over_id=ball_by_ball.over_id
+and batsman_scored.ball_id=ball_by_ball.ball_id
+and batsman_scored.innings_no=ball_by_ball.innings_no
+group by ball_by_ball.striker) as A
+inner join player on
+A.striker=player.player_id
+order by name asc;
+```
+![Q1i](./images/Q1i.png)
+- SQL Query file for the same. [Link](./sql_queries/Q1i.sql)
+- Result file. [Link](./results/Q1i.csv)
 
 <hr>
 j. List all captains who scored more than 50 runs in edition 3.  Sort names alphabetically < name >< runs >
