@@ -620,6 +620,10 @@ Note:  For this question, use a jupyter notebook.
 
 2,3,4. [Jupyter Notebook](./python_scripts/2_problem.ipynb).
 
+
+- 3 Output
+![3](./images/2_c.png)
+- 4 Output
 ![4](./images/2_4.png)
 
 ---
