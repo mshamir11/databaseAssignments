@@ -75,3 +75,8 @@ from Products inner join
 from Orders
 where Orders.user_ID=1) as A
 on A.product_ID=Products.product_ID;
+
+
+
+select * from Orders 
+where user_ID=1;

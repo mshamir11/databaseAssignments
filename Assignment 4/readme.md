@@ -1,20 +1,20 @@
 # Mohamed Shamir | 17110084 <!-- omit in toc -->
 ---
-
+<span style="color:red">Note: Please visit the github repository for codes. [Link](https://github.com/mshamir11/databaseAssignments/tree/master/Assignment%204)</span>.
 
 ## Contents <!-- omit in toc -->
 - [Questions:](#questions)
   - [Problem 1](#problem-1)
-    - [1. Fill the tables with at least 20 dummy records.](#1-fill-the-tables-with-at-least-20-dummy-records)
-    - [2. Delete a user from the database. After deleting the user update name of the user as ‘Anonymous’ in all the ratings and reviews written by that user.](#2-delete-a-user-from-the-database-after-deleting-the-user-update-name-of-the-user-as-anonymous-in-all-the-ratings-and-reviews-written-by-that-user)
-    - [3. Increment the price of all products priced below Rs. 5000 by 10%, which were viewed by more than 10 users in the last 3 months.](#3-increment-the-price-of-all-products-priced-below-rs-5000-by-10-which-were-viewed-by-more-than-10-users-in-the-last-3-months)
-    - [5. Find phone numbers and email IDs of all users who reside in the city ‘Madrid’ and have made a total purchase greater than or equal to Rs. 10000 in the past.](#5-find-phone-numbers-and-email-ids-of-all-users-who-reside-in-the-city-madrid-and-have-made-a-total-purchase-greater-than-or-equal-to-rs-10000-in-the-past)
-    - [6. Find all products in the database whose name contains the string ‘mi’. E.g. Xiaomi, etc, and all users who bought them at least once.](#6-find-all-products-in-the-database-whose-name-contains-the-string-mi-eg-xiaomi-etc-and-all-users-who-bought-them-at-least-once)
-    - [13. Sort all laptops according to the price in increasing order.](#13-sort-all-laptops-according-to-the-price-in-increasing-order)
-    - [16. Print the UserId, mobile number, and Email Id of all users who have saved a product in the cart, whose quantity is less than 5.](#16-print-the-userid-mobile-number-and-email-id-of-all-users-who-have-saved-a-product-in-the-cart-whose-quantity-is-less-than-5)
-    - [19. List all retailer ids whose products, user_id = 1 have purchased.](#19-list-all-retailer-ids-whose-products-user_id--1-have-purchased)
-    - [20. Write a query to update the discount on all new products by 15% and store it as a new table holi_Deals. Note: Any product that is added to the database in the last 100 days is considered to be a new product.](#20-write-a-query-to-update-the-discount-on-all-new-products-by-15-and-store-it-as-a-new-table-holi_deals-note-any-product-that-is-added-to-the-database-in-the-last-100-days-is-considered-to-be-a-new-product)
-    - [21 List the top 10 recommended products for the user_id=1 based on the user’s purchase and search history(use any recommendation algorithm).](#21-list-the-top-10-recommended-products-for-the-user_id1-based-on-the-users-purchase-and-search-historyuse-any-recommendation-algorithm)
+    - [1](#1)
+    - [2](#2)
+    - [3](#3)
+    - [5.](#5)
+    - [6](#6)
+    - [13](#13)
+    - [16](#16)
+    - [19](#19)
+    - [20](#20)
+    - [21](#21)
   - [Problem 2](#problem-2)
 - [References:](#references)
 - [Useful Materials:](#useful-materials)
@@ -50,9 +50,12 @@ Implement the backend connectors for the E-Commerce database created in ​Assig
 
 **Solution:**
 
+- [Jupyter Notebook Link](./1_problem.ipynb)
+
 Python Functions:
 
-#### 1. Fill the tables with at least 20 dummy records.
+#### 1
+Fill the tables with at least 20 dummy records.
 
 
 ```python
@@ -166,8 +169,10 @@ insert.insert_into_user_table('10000','shamir','shamir@gmail.com','passw','Ahmed
 
 ![alt](./images/1_1_1.png)
 
-#### 2. Delete a user from the database. After deleting the user update name of the user as ‘Anonymous’ in all the ratings and reviews written by that user.
+#### 2
+Delete a user from the database. After deleting the user update name of the user as ‘Anonymous’ in all the ratings and reviews written by that user.
 
+**Solution:**   
 Here user with user_ID=88888 is anonymous. When a particular user is deleted from the database, their order details are updated to user_ID 88888 before deletion to preserve the ratings and reviews as anonymous user.
 
 ```python
@@ -203,7 +208,10 @@ Here 4 is the user_ID of the user who is getting deleted.
 delete_from_user(mydb,4)
 ```
 
-#### 3. Increment the price of all products priced below Rs. 5000 by 10%, which were viewed by more than 10 users in the last 3 months. 
+#### 3
+ Increment the price of all products priced below Rs. 5000 by 10%, which were viewed by more than 10 users in the last 3 months. 
+
+**Solution:**
 
 
 - Original SQL query:
@@ -304,7 +312,10 @@ increase_price(mydb,5000,3,10,10)
 
 ![alt](./images/1_3.png)
 
-#### 5. Find phone numbers and email IDs of all users who reside in the city ‘Madrid’ and have made a total purchase greater than or equal to Rs. 10000 in the past.
+#### 5. 
+Find phone numbers and email IDs of all users who reside in the city ‘Madrid’ and have made a total purchase greater than or equal to Rs. 10000 in the past.
+
+**Solution:**
 
 ```python
 
@@ -339,8 +350,11 @@ find_data(mydb,'Madrid',10000)
 ![alt](./images/1_5.png)
 
 
-#### 6. Find all products in the database whose name contains the string ‘mi’. E.g. Xiaomi, etc, and all users who bought them at least once.
+#### 6
 
+Find all products in the database whose name contains the string ‘mi’. E.g. Xiaomi, etc, and all users who bought them at least once.
+
+**Solution:**
 
 ```python
 
@@ -372,7 +386,10 @@ find_data(mydb,'mi')
 ```
 ![alt](.images/../images/1_6.png)
 
-#### 13. Sort all laptops according to the price in increasing order.
+#### 13
+ Sort all laptops according to the price in increasing order.
+
+**Solution:**
 
 - SQL Query:
 
@@ -411,8 +428,10 @@ sort_electronics(mydb,'Laptop')
 
 ![alt](./images/1_13.png)
 
-#### 16. Print the UserId, mobile number, and Email Id of all users who have saved a product in the cart, whose quantity is less than 5.
+#### 16
+ Print the UserId, mobile number, and Email Id of all users who have saved a product in the cart, whose quantity is less than 5.
 
+**Solution:**
 
 ```python
  def list_product_cart(mydb,quantity):
@@ -438,7 +457,10 @@ sort_electronics(mydb,'Laptop')
 
 ![alt](./images/1_16.png)
 
-#### 19. List all retailer ids whose products, user_id = 1 have purchased.
+#### 19
+List all retailer ids whose products, user_id = 1 have purchased.
+
+**Solution:**
 
 ```python
  def list_retailers(mydb,user):
@@ -465,8 +487,10 @@ list_retailers(mydb,1)
 ```
 ![alt](./images/1_19.png)
 
-#### 20. Write a query to update the discount on all new products by 15% and store it as a new table holi_Deals. Note: Any product that is added to the database in the last 100 days is considered to be a new product.
+#### 20
+Write a query to update the discount on all new products by 15% and store it as a new table holi_Deals. Note: Any product that is added to the database in the last 100 days is considered to be a new product.
 
+**Solution:**
 - SQL Query:
   
   ```sql
@@ -534,8 +558,33 @@ new_deals(mydb,'holi_Deals','15')
 
 ![alt](./images/1_20.png)
 
-#### 21 List the top 10 recommended products for the user_id=1 based on the user’s purchase and search history(use any recommendation algorithm).
+#### 21 
+List the top 10 recommended products for the user_id=1 based on the user’s purchase and search history(use any recommendation algorithm).
 
+```python
+
+def list_recommendations(mydb,user_ID):
+
+    query="""
+    select Products.product_Name from Orders inner join Products on         Products.product_ID = Orders.product_ID 
+    and Orders.user_ID=%s 
+    order by Orders.rating DESC limit 10;
+
+    """
+
+    cursor = mydb.cursor()
+    cursor.execute(query,(user_ID,))
+
+    for line in cursor:
+        print(line)
+
+
+```
+
+```python
+list_recommendations(mydb,1)
+```
+![21](./images/1_21.png)
 
 ---
 <br>
