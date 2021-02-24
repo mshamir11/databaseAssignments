@@ -50,7 +50,7 @@ Implement the backend connectors for the E-Commerce database created in ​Assig
 
 **Solution:**
 
-- [Jupyter Notebook Link](./1_problem.ipynb)
+- [Jupyter Notebook Link](./python_scripts/1_problem.ipynb)
 
 Python Functions:
 
@@ -618,7 +618,7 @@ Note:  For this question, use a jupyter notebook.
 
 ![schema](./images/schema.png)
 
-2,3,4. [Jupyter Notebook](./2_problem.ipynb).
+2,3,4. [Jupyter Notebook](./python_scripts/2_problem.ipynb).
 
 ![4](./images/2_4.png)
 
